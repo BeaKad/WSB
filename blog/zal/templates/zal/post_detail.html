@@ -26,6 +26,11 @@
 <div data-gb-custom-block data-tag="empty">
         <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.id %}" data-0='add_comment_to_post'> Dodaj komentarz</a>
     <p>Nie ma jeszcze żadnych komentarzy, bądź pierwszy!</p>
-
+    {% for comment in comments %}
+        <div class="comment">
+  <p><strong>{{ comment.author }}</strong> {{ comment.created_date }}</p>
+  <p>{{ comment.text|linebreaksbr }}</p>
+    </div>
 </div>
+{% endfor %}
 {% endblock %}
