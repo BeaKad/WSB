@@ -11,7 +11,7 @@
        {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         {% endif %}
-        <h2>{{ post.title }}</h2>
+        <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     <hr>
 
@@ -23,13 +23,13 @@
         <p>{{ comment.text|linebreaks }}</p>
     </div>
 
-<div data-gb-custom-block data-tag="empty">
+    <div data-gb-custom-block data-tag="empty">
         <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.id %}" data-0='add_comment_to_post'> Dodaj komentarz</a>
-    <p>Nie ma jeszcze żadnych komentarzy, bądź pierwszy!</p>
+    <h2> Komentarze </h2>
     {% for comment in comments %}
-        <div class="comment">
-  <p><strong>{{ comment.author }}</strong> {{ comment.created_date }}</p>
-  <p>{{ comment.text|linebreaksbr }}</p>
+    <div class="comment">
+        <p><strong>{{ comment.author }}</strong> {{ comment.created_date }}</p>
+        <p>{{ comment.text|linebreaksbr }}</p>
     </div>
 </div>
 {% endfor %}
