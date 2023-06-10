@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.10"
 pendulum = "^2.1.2"
 django = "^4.2.2"
+css = "^0.1"
 
 
 
