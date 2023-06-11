@@ -18,6 +18,20 @@ typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "confusable-homoglyphs"
+version = "3.2.0"
+description = "Detect confusable usage of unicode homoglyphs, prevent homograph attacks."
+optional = false
+python-versions = "*"
+files = [
+    {file = "confusable_homoglyphs-3.2.0-py2.py3-none-any.whl", hash = "sha256:e3ce611028d882b74a5faa69e3cbb5bd4dcd9f69936da6e73d33eda42c917944"},
+    {file = "confusable_homoglyphs-3.2.0.tar.gz", hash = "sha256:3b4a0d9fa510669498820c91a0bfc0c327568cecec90648cf3819d4a6fc6a751"},
+]
+
+[package.extras]
+cli = ["click"]
+
+[[package]]
 name = "css"
 version = "0.1"
 description = "a small, fast css parser for python the utilizes the codetalker library"
@@ -46,6 +60,11 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+
+[package.dependencies]
+confusable-homoglyphs = ">=3.0,<4.0"
+Django = ">=3.2"
 
 [[package]]
 name = "pendulum"
@@ -158,4 +177,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e04e4df30c6705100ddf7c70f845d967e92e8d9f7b59a14d8671b9e20e8c9a6a"
+content-hash = "dcb186a657e6fd5c56f4d1a58e41abb9088991d6c049d2d1ab9b82f4eb409064"
