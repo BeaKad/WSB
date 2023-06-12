@@ -23,6 +23,7 @@ def sign_in(request):
                 messages.success(request, f'Hi {username.title()}, welcome back!')
                 return redirect('post_list')
 
+        if not form.is_valid():
             messages.error(request, f'Invalid username or password')
             return render(request, 'users/login.html', {'form': form})
 
@@ -35,7 +36,7 @@ def sign_out(request):
 def sign_up(request):
     if request.method == 'GET':
         form = RegisterForm()
-        return render(request, 'users/register.html', { 'form': form})
+        return render(request, 'users/register.html', {'form': form})
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -48,4 +49,3 @@ def sign_up(request):
             return redirect('post_list')
         else:
             return render(request, 'users/register.html', {'form': form})
-
